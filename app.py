@@ -112,7 +112,7 @@ def webhook_handler():
         if response == False:
             #send_text_message(event.reply_token, "Not Entering any State")
             line_bot_api.reply_message(
-                event.reply_token, TextSendMessage(text='hello')
+                event.reply_token, TextSendMessage(body)
             )
 
     return "OK"
