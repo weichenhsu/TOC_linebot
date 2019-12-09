@@ -46,7 +46,8 @@ class TocMachine(GraphMachine):
     def on_enter_state3(self, event):
         print("I'm entering state3")
         reply_token = event.reply_token
-        message = TextSendMessage(text='Hello, world')
+        #message = TextSendMessage(text='Hello, world')
+        message = 'test'
         send_text_message(reply_token, message)
 
         #message = TextSendMessage(text='Hello, world')
