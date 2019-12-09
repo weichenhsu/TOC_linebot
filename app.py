@@ -30,7 +30,7 @@ machine = TocMachine(
         },
         {
             "trigger": "advance",
-            "source": "user",
+            "source": ["user", "state3"],
             "dest": "state3",
             "conditions": "is_going_to_state3",
         },
