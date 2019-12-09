@@ -7,6 +7,14 @@ class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
         self.machine = GraphMachine(model=self, **machine_configs)
 
+
+
+    def send_image(reply_token, text):
+        #line_bot_api = LineBotApi(channel_access_token)
+        line_bot_api.reply_message(reply_token, text
+        )
+    return "OK"
+
     def is_going_to_state1(self, event):
         text = event.message.text
         return text.lower() == "go to state1"
@@ -41,13 +49,14 @@ class TocMachine(GraphMachine):
 
     def on_enter_state3(self, event):
         print("I'm entering state3")
-        reply_token = event.reply_token        
-
+        reply_token = event.reply_token    
+        message = TextSendMessage(text='Hello, world')    
+        send_image(reply_token, message)
         self.go_back()
         #message = TextSendMessage(text='Hello, world')
         
-        message = 'test'
-        send_text_message(reply_token, message)
+        #message = 'test'
+        #send_text_message(reply_token, message)
 
     def on_exit_state3(self):
         print("Leaving state3")
