@@ -47,7 +47,7 @@ class TocMachine(GraphMachine):
         self.go_back()
         #message = TextSendMessage(text='Hello, world')
         line_bot_api.reply_message(
-                event.reply_token, TextSendMessage(text='hello')
+            event.reply_token, TextSendMessage(text='hello')
         )
         #message = 'test'
         #send_text_message(reply_token, message)
