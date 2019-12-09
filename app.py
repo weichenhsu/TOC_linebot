@@ -35,7 +35,7 @@ machine = TocMachine(
             "conditions": "is_going_to_state3",
         },
         {
-            "trigger": "next_state",
+            "trigger": "advance",
             "source": "state3",
             "dest": "state4",
             "conditions": "is_going_to_state4",
