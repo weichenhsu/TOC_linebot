@@ -47,7 +47,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state3")
         reply_token = event.reply_token
         send_text_message(reply_token, "Trigger state3")
-        self.next()
+        #self.next()
         #message = TextSendMessage(text='Hello, world')
         
         #message = 'test'
