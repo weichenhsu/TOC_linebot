@@ -35,7 +35,7 @@ machine = TocMachine(
             "conditions": "is_going_to_state3",
         },
         {
-            "trigger": "next",
+            "trigger": "advance",
             "source": "state3",
             "dest": "state4",
             "conditions": "is_going_to_state4",
@@ -117,7 +117,7 @@ def webhook_handler():
         if machine.state == 'user':
             response = machine.advance(event)
         if machine.state == 'state3':
-            response = machine.next(event)
+            response = machine.advance(event)
         if response == False:
             send_text_message(event.reply_token, "Not Entering any State")
             '''message = TextSendMessage(text='Hello, world')
