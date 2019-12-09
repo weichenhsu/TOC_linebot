@@ -44,15 +44,8 @@ class TocMachine(GraphMachine):
 
     def on_enter_state3(self, event):
         print("I'm entering state3")
-
         reply_token = event.reply_token
-        message = {
-            type: 'text',
-            text: 'state 3'
-        } 
-
-        # 傳送訊息
-        line.reply_message(reply_token, message)
+        send_text_message(reply_token, "Trigger state3")
 
         self.go_back()
 
