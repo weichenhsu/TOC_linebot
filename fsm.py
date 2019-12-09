@@ -46,10 +46,11 @@ class TocMachine(GraphMachine):
     def on_enter_state3(self, event):
         print("I'm entering state3")
         reply_token = event.reply_token
-        send_text_message(reply_token, "Trigger state3")
-
         message = TextSendMessage(text='Hello, world')
-        line_bot_api.reply_message(event.reply_token, message)
+        send_text_message(reply_token, message)
+
+        #message = TextSendMessage(text='Hello, world')
+        #line_bot_api.reply_message(event.reply_token, message)
 
         self.go_back()
 
