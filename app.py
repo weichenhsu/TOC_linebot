@@ -121,7 +121,8 @@ def webhook_handler():
             response = machine.next(event)
             send_text_message(event.reply_token, "state4")'''
         if response == False:
-            send_text_message(event.reply_token, machine.state)
+            message = machine.state + event.message.text
+            send_text_message(event.reply_token, )
             '''message = TextSendMessage(text='Hello, world')
             line_bot_api.reply_message(
                 event.reply_token, message
