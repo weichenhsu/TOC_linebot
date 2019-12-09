@@ -111,8 +111,9 @@ def webhook_handler():
         response = machine.advance(event)
         if response == False:
             #send_text_message(event.reply_token, "Not Entering any State")
+            message = TextSendMessage(text='Hello, world')
             line_bot_api.reply_message(
-                event.reply_token, TextSendMessage('hello')
+                event.reply_token, message
             )
 
     return "OK"
