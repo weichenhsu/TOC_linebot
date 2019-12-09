@@ -16,9 +16,6 @@ class TocMachine(GraphMachine):
         return text.lower() == "go to state2"
 
     def is_going_to_state3(self, event):
-        #message = TextSendMessage(text='Hello, world')
-        #line_bot_api.reply_message(event.reply_token, message)
-
         text = event.message.text
         return text.lower() == "go to state3"
 
@@ -53,7 +50,8 @@ class TocMachine(GraphMachine):
         #message = TextSendMessage(text='Hello, world')
         #line_bot_api.reply_message(event.reply_token, message)
 
-        self.go_back()
+        #self.go_back()
 
     def on_exit_state3(self):
         print("Leaving state3")
+        self.go_back()
