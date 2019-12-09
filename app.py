@@ -117,7 +117,7 @@ def webhook_handler():
         if machine.state == 'user':
             response = machine.advance(event)
         if machine.state == 'state3':
-            send_text_message(event.reply_token, "state4")
+            send_text_message(event.reply_token, event)
             response = machine.next(event)
             send_text_message(event.reply_token, "state4")
         if response == False:
