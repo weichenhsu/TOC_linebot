@@ -14,12 +14,12 @@ class TocMachine(GraphMachine):
             return True
         else:
             return False'''
-        return text.lower() == "go to state1"
+        return text.lower() == "貓貓照片"
 
     def is_going_to_cat_video(self, event):
         print("go to cat_video")
         text = event.message.text
-        return text.lower() == "go to state2"
+        return text.lower() == "貓貓影片"
 
     def is_going_to_state3(self, event):
         print("go to state3 ing")
