@@ -86,6 +86,10 @@ def send_templete_message_news(reply_token):
                 MessageTemplateAction(
                     label='娛樂',
                     text='娛樂'
+                ),
+                MessageTemplateAction(
+                    label='體育',
+                    text='體育'
                 )
             ]
         )
