@@ -26,6 +26,16 @@ def send_image(reply_token, text):
     )
     return "OK"
 
+def send_video(reply_token, text):
+    line_bot_api = LineBotApi(channel_access_token)
+    message = VideoSendMessage(
+        original_content_url = text,
+        preview_image_url = text
+    )
+    line_bot_api.reply_message(event.reply_token, message)
+    return "OK"
+
+
 def movie(reply_token):
     line_bot_api = LineBotApi(channel_access_token)
     print("movie")

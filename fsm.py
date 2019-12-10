@@ -7,17 +7,17 @@ class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
         self.machine = GraphMachine(model=self, **machine_configs)
 
-    def is_going_to_state1(self, event):
-        print("go to state1 ing")
+    def is_going_to_cat_picture(self, event):
+        print("go to cat_picture")
         text = event.message.text
-        '''if text.lower() == "go to state1":
+        '''if text.lower() == "貓貓照片":
             return True
         else:
             return False'''
         return text.lower() == "go to state1"
 
-    def is_going_to_state2(self, event):
-        print("go to state2 ing")
+    def is_going_to_cat_video(self, event):
+        print("go to cat_video")
         text = event.message.text
         return text.lower() == "go to state2"
 
@@ -26,26 +26,31 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "go to state3"
 
-    def on_enter_state1(self, event):
+
+
+
+
+    def on_enter_cat_picture(self, event):
         print("I'm entering state1")
 
         reply_token = event.reply_token
-        send_text_message(reply_token, "Trigger state1")
+        send_image(reply_token, "https://i.imgur.com/NinLHTp.jpg")
+        #send_text_message(reply_token, "Trigger state1")
         self.go_back()
 
-    def on_exit_state1(self):
+    def on_exit_cat_picture(self):
         print("Leaving state1")
 
-    def on_enter_state2(self, event):
+    def on_enter_cat_video(self, event):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        
+        send_video(reply_token, "https://i.imgur.com/Rq6m3PO.mp4")
         #send_text_message(reply_token, "Trigger state2")
-        movie(reply_token)
+        #movie(reply_token)
         self.go_back()
 
-    def on_exit_state2(self):
+    def on_exit_cat_video(self):
         print("Leaving state2")
 
     def on_enter_state3(self, event):
