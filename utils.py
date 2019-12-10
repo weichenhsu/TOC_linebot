@@ -45,18 +45,17 @@ def send_templete_message(reply_token):
             title='Menu',
             text='Please select',
             actions=[
-                PostbackTemplateAction(
-                    label='postback',
-                    text='postback text',
-                    data='action=buy&itemid=1'
+                MessageTemplateAction(
+                    label='picture',
+                    text='貓貓照片'
                 ),
                 MessageTemplateAction(
-                    label='message',
-                    text='test'
+                    label='video',
+                    text='貓貓影片'
                 ),
                 URITemplateAction(
-                    label='uri',
-                    uri='https://i.imgur.com/TgmgaPf.mp4'
+                    label='More cat',
+                    uri='https://imgur.com/user/Weichen136/posts'
                 )   
             ]
         )
