@@ -27,6 +27,7 @@ def send_image(reply_token, text):
     return "OK"
 
 def movie(reply_token):
+    line_bot_api = LineBotApi(channel_access_token)
     print("movie")
     target_url = 'https://movies.yahoo.com.tw/'
     requests.packages.urllib3.disable_warnings()
