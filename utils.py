@@ -82,19 +82,7 @@ def send_templete_message_news(reply_token):
                 MessageTemplateAction(
                     label='科學與科技',
                     text='科學與科技'
-                )''',
-                MessageTemplateAction(
-                    label='娛樂',
-                    text='娛樂'
-                ),
-                MessageTemplateAction(
-                    label='體育',
-                    text='體育'
-                ),
-                MessageTemplateAction(
-                    label='健康',
-                    text='健康'
-                )'''
+                )
             ]
         )
     )
@@ -124,3 +112,16 @@ def news(reply_token, url):
     return content
 
     
+''',
+                MessageTemplateAction(
+                    label='娛樂',
+                    text='娛樂'
+                ),
+                MessageTemplateAction(
+                    label='體育',
+                    text='體育'
+                ),
+                MessageTemplateAction(
+                    label='健康',
+                    text='健康'
+                )'''
