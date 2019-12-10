@@ -41,7 +41,7 @@ def send_templete_message_cat(reply_token):
         alt_text='Buttons template',
         template=ButtonsTemplate(
             thumbnail_image_url='https://i.imgur.com/8lTsvo1.jpg',
-            title='Menu',
+            title='Cuty Cat',
             text='Please select',
             actions=[
                 MessageTemplateAction(
@@ -69,15 +69,11 @@ def send_templete_message_news(reply_token):
         template=ButtonsTemplate(
             thumbnail_image_url='https://i.imgur.com/rETMF3V.jpg',
             title='News',
-            text='Please select',
+            text='還有商業跟體育可以選擇喔~',
             actions=[
                 MessageTemplateAction(
                     label='國際',
                     text='國際'
-                ),
-                MessageTemplateAction(
-                    label='商業',
-                    text='商業'
                 ),
                 MessageTemplateAction(
                     label='科學與科技',
@@ -88,8 +84,8 @@ def send_templete_message_news(reply_token):
                     text='娛樂'
                 ),
                 MessageTemplateAction(
-                    label='體育',
-                    text='體育'
+                    label='健康',
+                    text='健康'
                 )
             ]
         )
