@@ -51,7 +51,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        send_video(reply_token, "https://imgur.com/gallery/wToZmH5")
+        send_video(reply_token, "https://i.imgur.com/Rq6m3PO.mp4", "https://i.imgur.com/haMAxrE.jpg")
         #self.go_back()
 
     def on_exit_cat_video(self, event):
