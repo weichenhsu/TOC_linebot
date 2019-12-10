@@ -30,7 +30,7 @@ machine = TocMachine(
         },
         {
             "trigger": "advance",
-            "source": "user",
+            "source": "cat_video",
             "dest": "state3",
             "conditions": "is_going_to_state3",
         },
