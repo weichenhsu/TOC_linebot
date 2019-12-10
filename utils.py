@@ -79,7 +79,7 @@ def news(reply_token, url):
             content += "{}\n{}\n".format(title.text, a)
         count += 1
     print(content)
-    line_bot_api.reply_message(reply_token, content)
+    line_bot_api.reply_message(reply_token, TextSendMessage(text=content))
     return "OK"
 
     
