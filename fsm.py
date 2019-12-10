@@ -13,7 +13,28 @@ picture = ["https://imgur.com/JL1zwCv.jpg",
             "https://imgur.com/2aQRaJO.jpg",
             "https://imgur.com/YlxSZAB.jpg",
             "https://imgur.com/g6OXNpf.jpg",
-            "https://imgur.com/n6n6QAb.jpg"
+            "https://imgur.com/n6n6QAb.jpg".
+            "https://i.imgur.com/thAjjOp.jpg",
+            "https://imgur.com/k6RuQOn.jpg",
+            "https://imgur.com/m8VPULl,jpg",
+            "https://imgur.com/JdkvXqa.jpg",
+            "https://imgur.com/SHGQDSE.jpg"
+            ]
+
+video_mp4 = ["https://i.imgur.com/Rq6m3PO.mp4", 
+            "https://imgur.com/qFq8Ndu.mp4",
+            "https://i.imgur.com/oMuLiKj.mp4",
+            "https://imgur.com/aTjpFd6.mp4",
+            "https://imgur.com/mDHH7ce.mp4",
+            "https://imgur.com/TgmgaPf.mp4"
+            ]
+
+video_jpg = ["https://i.imgur.com/haMAxrE.jpg",
+            "https://i.imgur.com/OuSXpfE.jpg",
+            "https://i.imgur.com/WpEDtlZ.jpg",
+            "https://imgur.com/UtSbLyd,jpg",
+            "https://imgur.com/DhvdkjA.jpg",
+            "https://imgur.com/v3u0Zvv,jpg"
             ]
 
 
@@ -107,7 +128,6 @@ class TocMachine(GraphMachine):
         reply_token = event.reply_token
         i = random.randint(0, len(picture) -1)
         send_image(reply_token, picture[i])
-        #send_image(reply_token, "https://i.imgur.com/NinLHTp.jpg")
         self.go_back()
 
     def on_exit_cat_picture(self):
@@ -116,7 +136,9 @@ class TocMachine(GraphMachine):
 
     def on_enter_cat_video(self, event):
         reply_token = event.reply_token
-        send_video(reply_token, "https://i.imgur.com/Rq6m3PO.mp4", "https://i.imgur.com/haMAxrE.jpg")
+        i = random.randint(0, len(video_mp4) -1)
+        send_video(reply_token, video_mp4[i], video_jpg[i])
+        #send_video(reply_token, "https://i.imgur.com/Rq6m3PO.mp4", "https://i.imgur.com/haMAxrE.jpg")
         self.go_back()
 
     def on_exit_cat_video(self):
