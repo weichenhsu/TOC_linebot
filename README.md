@@ -39,27 +39,27 @@ ALL INPUT are case-insensitive.
 		- Reply:`news`功能選單
 		    - Input:"國際" or "International"
 		        - State:`international`
-		        - Reply:四則熱門國際新聞
+		        - Reply:最多四則熱門國際新聞
 		        - Return:`user`
 		    - Input:"商業" or "business"
 		        - State:`business`
-		        - Reply:四則熱門商業新聞
+		        - Reply:最多四則熱門商業新聞
 		        - Return:`user`
 		    - Input:"科學與科技" or "科學" or "科技" or "science"
 		        - State:`science`
-		        - Reply:四則熱門科學與科技新聞
+		        - Reply:最多四則熱門科學與科技新聞
 		        - Return:`user`
 		    - Input:"娛樂" or "entertainment"
 		        - State:`entertainment`
-		        - Reply:四則熱門娛樂新聞
+		        - Reply:最多四則熱門娛樂新聞
 		        - Return:`user`
             - Input:"體育" or "physical"
 		        - State:`physical`
-		        - Reply:四則熱門體育新聞
+		        - Reply:最多四則熱門體育新聞
 		        - Return:`user`
 		    - Input:"健康" or "health"
 		        - State:`health`
-		        - Reply:四則熱門健康新聞
+		        - Reply:最多四則熱門健康新聞
 		        - Return:`user`
 		    - Input:"cat" or "貓咪" or "貓貓"
 		        - State:`cat`
