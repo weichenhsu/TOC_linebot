@@ -14,7 +14,7 @@ load_dotenv()
 
 
 machine = TocMachine(
-    states=["user", "cat_picture", "cat_video", "state3", "menu"],
+    states=["user", "cat_picture", "cat_video", "state3", "menu", "weather"],
     transitions=[
         {
             "trigger": "advance",
@@ -40,7 +40,13 @@ machine = TocMachine(
             "dest": "menu",
             "conditions": "is_going_to_menu",
         },
-        {"trigger": "go_back", "source": ["cat_picture", "cat_video", "state3", "menu"], "dest": "user"},
+        {
+            "trigger": "advance",
+            "source": "user",
+            "dest": "weather",
+            "conditions": "is_going_to_weather",
+        },
+        {"trigger": "go_back", "source": ["cat_picture", "cat_video", "state3", "menu", "weather"], "dest": "user"},
     ],
     initial="user",
     auto_transitions=False,
