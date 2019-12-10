@@ -37,6 +37,7 @@ def send_video(reply_token, text):
     return "OK"
 
 def send_templete_message(reply_token):
+    line_bot_api = LineBotApi(channel_access_token)
     message = TemplateSendMessage(
         alt_text='Buttons template',
         template=ButtonsTemplate(
