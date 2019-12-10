@@ -64,7 +64,7 @@ def send_templete_message(reply_token):
 
 
 def news(reply_token, url):
-    line_bot_api = LineBotApi(channel_access_token)
+    #line_bot_api = LineBotApi(channel_access_token)
 
     res = requests.get("https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRGx1YlY4U0JYcG9MVlJYR2dKVVZ5Z0FQAQ?hl=zh-TW&gl=TW&ceid=TW%3Azh-Hant")
     #Google國際新聞的網址
@@ -80,8 +80,8 @@ def news(reply_token, url):
             content += "{}\n{}\n".format(title.text, a)
         count += 1
     print(content)
-    line_bot_api.reply_message(reply_token, TextSendMessage(text=content))
+    #line_bot_api.reply_message(reply_token, TextSendMessage(text=content))
     print("haha")
-    return "OK"
+    return content
 
     
