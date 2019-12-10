@@ -64,35 +64,22 @@ def send_templete_message(reply_token):
     return "OK"
 
 
-def movie(reply_token):
+def news(reply_token, url):
     line_bot_api = LineBotApi(channel_access_token)
-    print("movie")
 
-    r = requests.get("https://www.cwb.gov.tw/V8/C/W/County/County.html?CID=67") #將網頁資料GET下來
-    soup = BeautifulSoup(r.text,"html.parser") #將網頁資料以html.parser
-    sel = soup.select("span.tem-C is-active") #取HTML標中的 <div class="title"></div> 中的<a>標籤存入sel
+    res = requests.get("https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRGx1YlY4U0JYcG9MVlJYR2dKVVZ5Z0FQAQ?hl=zh-TW&gl=TW&ceid=TW%3Azh-Hant")
+    #Google國際新聞的網址
+    soup = BeautifulSoup(res.text,"html.parser")
     content = ""
-    for s in sel:
-        print(s["href"], s.text) 
-        content += '{}\n'.format(s.text)
-
-    line_bot_api.reply_message(reply_token,TextSendMessage(text=content))
+    count = 0
+    for title,url in zip(soup.select("h4"),soup.select("h4 > a[href]")):
+        if count < 10:
+            #Google有時會換字體大小 像是h3改成現在的h4
+            a = url['href'].replace("./", "")
+            content += "{}\n{}\n".format(title.text, a)
+        count += 1
+    print(content)
+    line_bot_api.reply_message(reply_token, content)
     return "OK"
-
-
-    '''
-    target_url = 'https://movies.yahoo.com.tw/'
-    requests.packages.urllib3.disable_warnings()
-    #rs = requests.session()
-    res = requests.get(target_url, verify=False)
-    res.encoding = 'utf-8'
-    soup = BeautifulSoup(res.text, 'html.parser')   
-    content = ""
-    for index, data in enumerate(soup.select('div.movielist_info h1 a')):
-        if index == 20:
-            return content       
-        title = data.text
-        link =  data['href']
-        content += '{}\n{}\n'.format(title, link)'''
 
     

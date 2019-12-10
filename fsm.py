@@ -81,7 +81,7 @@ class TocMachine(GraphMachine):
     def on_enter_weather(self, event):
         print("I'm entering state3")
         reply_token = event.reply_token
-        movie(reply_token)
+        news(reply_token, "test")
         #send_text_message(reply_token, "Trigger state3")
         self.go_back()
 
