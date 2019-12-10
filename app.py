@@ -18,7 +18,7 @@ machine = TocMachine(
     transitions=[
         {
             "trigger": "advance",
-            "source": "user",
+            "source": ["user", "news"],
             "dest": "cat",
             "conditions": "is_going_to_cat",
         },
@@ -36,7 +36,7 @@ machine = TocMachine(
         },
         {
             "trigger": "advance",
-            "source": "user",
+            "source": ["user", "cat"],
             "dest": "news",
             "conditions": "is_going_to_news",
         },
@@ -76,7 +76,7 @@ machine = TocMachine(
             "dest": "health",
             "conditions": "is_going_to_health",
         },
-        {"trigger": "go_back", "source": ["cat", "cat_picture", "cat_video", "news", "international", "business", "science", "entertainment", "physical", "health"], "dest": "user"},
+        {"trigger": "go_back", "source": ["cat_picture", "cat_video", "international", "business", "science", "entertainment", "physical", "health"], "dest": "user"},
     ],
     initial="user",
     auto_transitions=False,
