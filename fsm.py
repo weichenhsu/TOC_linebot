@@ -41,7 +41,6 @@ class TocMachine(GraphMachine):
 
         reply_token = event.reply_token
         send_image(reply_token, "https://i.imgur.com/NinLHTp.jpg")
-        #send_text_message(reply_token, "Trigger state1")
         self.go_back()
 
     def on_exit_cat_picture(self):
@@ -52,7 +51,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state2")
 
         reply_token = event.reply_token
-        send_video(reply_token, "https://i.imgur.com/Rq6m3PO.mp4")
+        send_video(reply_token, "https://imgur.com/gallery/wToZmH5")
         #self.go_back()
 
     def on_exit_cat_video(self, event):
