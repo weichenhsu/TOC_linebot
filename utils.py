@@ -29,6 +29,17 @@ def send_image(reply_token, text):
 def movie(reply_token):
     line_bot_api = LineBotApi(channel_access_token)
     print("movie")
+
+    r = requests.get("https://www.ptt.cc/bbs/MobileComm/index.html") #將網頁資料GET下來
+    soup = BeautifulSoup(r.text,"html.parser") #將網頁資料以html.parser
+    sel = soup.select("div.title a") #取HTML標中的 <div class="title"></div> 中的<a>標籤存入sel
+    content = ""
+    for s in sel:
+        print(s["href"], s.text) 
+        content += s.text
+
+
+    '''
     target_url = 'https://movies.yahoo.com.tw/'
     requests.packages.urllib3.disable_warnings()
     #rs = requests.session()
@@ -41,7 +52,7 @@ def movie(reply_token):
             return content       
         title = data.text
         link =  data['href']
-        content += '{}\n{}\n'.format(title, link)
+        content += '{}\n{}\n'.format(title, link)'''
 
     line_bot_api.reply_message(reply_token,TextSendMessage(text=content))
     return "OK"
