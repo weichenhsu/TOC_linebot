@@ -54,8 +54,8 @@ def send_templete_message(reply_token):
                     text='貓貓影片'
                 ),
                 URITemplateAction(
-                    label='More cat',
-                    uri='https://imgur.com/user/weichen136/posts'
+                    label='My IG but no cat~',
+                    uri='https://www.instagram.com/weichen1306/?hl=zh-tw'
                 )   
             ]
         )
