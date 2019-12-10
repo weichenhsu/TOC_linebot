@@ -8,17 +8,9 @@ count = 0
 for title,url in zip(soup.select("h4"),soup.select("h4 > a[href]")):
     if count < 10:
         #Google有時會換字體大小 像是h3改成現在的h4
-        
-        #print ('')
-        #print (title.text)
+
         a = url['href'].replace("./", "")
-        #a = 'https://news.google.com/'+a
-        #print(a)
-        #print ('https://news.google.com/'+a)
-        '''content += title.text
-        content += "\n"
-        content += a
-        content += "\n"'''
+        a = 'https://news.google.com/'+a
         content += "{}\n{}\n".format(title.text, a)
     count += 1
 print(content)

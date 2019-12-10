@@ -4,9 +4,8 @@ from linebot import LineBotApi, WebhookParser
 #from linebot.models import MessageEvent, TextMessage, TextSendMessage
 from linebot.models import *
 
-import requests 
+import requests
 from bs4 import BeautifulSoup
-from urllib.request import urlretrieve
 
 channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", None)
 
@@ -74,12 +73,15 @@ def news(reply_token, url):
     count = 0
     for title,url in zip(soup.select("h4"),soup.select("h4 > a[href]")):
         if count < 10:
-            #Google有時會換字體大小 像是h3改成現在的h4
+        #Google有時會換字體大小 像是h3改成現在的h4
+
             a = url['href'].replace("./", "")
-            content += "{}\n'https://news.google.com/'{}\n".format(title.text, a)
+            a = 'https://news.google.com/'+a
+            content += "{}\n{}\n".format(title.text, a)
         count += 1
     print(content)
     line_bot_api.reply_message(reply_token, TextSendMessage(text=content))
+    print("haha")
     return "OK"
 
     
