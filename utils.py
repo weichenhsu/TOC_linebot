@@ -29,8 +29,8 @@ def send_image(reply_token, text):
 def movie(reply_token):
     print("movie")
     target_url = 'https://movies.yahoo.com.tw/'
-    rs = requests.session()
-    res = rs.get(target_url, verify=False)
+    #rs = requests.session()
+    res = requests.get(target_url, verify=False)
     res.encoding = 'utf-8'
     soup = BeautifulSoup(res.text, 'html.parser')   
     content = ""
