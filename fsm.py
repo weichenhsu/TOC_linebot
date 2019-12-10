@@ -49,7 +49,7 @@ class TocMachine(GraphMachine):
         send_video(reply_token, "https://i.imgur.com/Rq6m3PO.mp4")
         #self.go_back()
 
-    def on_exit_cat_video(self):
+    def on_exit_cat_video(self, event):
         print("Leaving state2")
 
 
