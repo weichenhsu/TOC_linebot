@@ -26,6 +26,12 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "go to state3"
 
+    def is_going_to_menu(self, event):
+        print("go to menu")
+        text = event.message.text
+        return text.lower() == "menu"
+
+
 
 
 
@@ -61,4 +67,14 @@ class TocMachine(GraphMachine):
 
     def on_exit_state3(self):
         print("Leaving state3")
+
+
+    def on_enter_menu(self, event):
+        print("I'm entering menu")
+        reply_token = event.reply_token
+        send_templete_message(reply_token)
+        self.go_back()
+
+    def on_exit_menu(self):
+        print("Leaving menu")
 

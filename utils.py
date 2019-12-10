@@ -36,6 +36,32 @@ def send_video(reply_token, text):
     line_bot_api.reply_message(reply_token, message)
     return "OK"
 
+def send_templete_message(reply_token):
+    message = TemplateSendMessage(
+        alt_text='Buttons template',
+        template=ButtonsTemplate(
+            thumbnail_image_url='https://i.imgur.com/8lTsvo1.jpg',
+            title='Menu',
+            text='Please select',
+            actions=[
+                PostbackTemplateAction(
+                    label='postback',
+                    text='postback text',
+                    data='action=buy&itemid=1'
+                ),
+                MessageTemplateAction(
+                    label='message',
+                    text='test'
+                ),
+                URITemplateAction(
+                    label='uri',
+                    uri='https://i.imgur.com/TgmgaPf.mp4'
+                )   
+            ]
+        )
+    )
+    line_bot_api.reply_message(reply_token, message)
+
 
 def movie(reply_token):
     line_bot_api = LineBotApi(channel_access_token)
