@@ -35,7 +35,7 @@ def send_video(reply_token, text_mp4, text_jpg):
     line_bot_api.reply_message(reply_token, message)
     return "OK"
 
-def send_templete_message(reply_token):
+def send_templete_message_cat(reply_token):
     line_bot_api = LineBotApi(channel_access_token)
     message = TemplateSendMessage(
         alt_text='Buttons template',
@@ -62,12 +62,51 @@ def send_templete_message(reply_token):
     line_bot_api.reply_message(reply_token, message)
     return "OK"
 
+def send_templete_message_news(reply_token):
+    line_bot_api = LineBotApi(channel_access_token)
+    message = TemplateSendMessage(
+        alt_text='Buttons template',
+        template=ButtonsTemplate(
+            thumbnail_image_url='https://i.imgur.com/rETMF3V.jpg',
+            title='Menu',
+            text='Please select',
+            actions=[
+                MessageTemplateAction(
+                    label='國際',
+                    text='國際'
+                ),
+                MessageTemplateAction(
+                    label='商業',
+                    text='商業'
+                ),
+                MessageTemplateAction(
+                    label='科學與科技',
+                    text='科學與科技'
+                ),
+                MessageTemplateAction(
+                    label='娛樂',
+                    text='娛樂'
+                ),
+                MessageTemplateAction(
+                    label='體育',
+                    text='體育'
+                ),
+                MessageTemplateAction(
+                    label='健康',
+                    text='健康'
+                ),
+            ]
+        )
+    )
+    line_bot_api.reply_message(reply_token, message)
+    return "OK"
+
+
 
 def news(reply_token, url):
     line_bot_api = LineBotApi(channel_access_token)
 
     res = requests.get(url)
-    #Google國際新聞的網址
     soup = BeautifulSoup(res.text,"html.parser")
     content = ""
     count = 0
@@ -79,7 +118,7 @@ def news(reply_token, url):
             a = 'https://news.google.com/'+a
             content += "{}\n{}\n".format(title.text, a)
         count += 1
-    print(content)
+    #print(content)
     line_bot_api.reply_message(reply_token, TextSendMessage(text=content))
 
     return content
