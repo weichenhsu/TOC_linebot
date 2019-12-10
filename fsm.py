@@ -2,18 +2,18 @@ from transitions.extensions import GraphMachine
 from utils import *
 import random
 
-picture = ["https://imgur.com/JL1zwCv",
-            "https://imgur.com/8lTsvo1",
-            "https://imgur.com/ONdJRvL",
-            "https://imgur.com/haMAxrE",
-            "https://imgur.com/Yu33342",
-            "https://imgur.com/NinLHTp",
-            "https://imgur.com/gzO6lIo",
-            "https://imgur.com/utxw1y7",
-            "https://imgur.com/2aQRaJO",
-            "https://imgur.com/YlxSZAB",
-            "https://imgur.com/g6OXNpf",
-            "https://imgur.com/n6n6QAb"
+picture = ["https://imgur.com/JL1zwCv.jpg",
+            "https://imgur.com/8lTsvo1.jpg",
+            "https://imgur.com/ONdJRvL.jpg",
+            "https://imgur.com/haMAxrE.jpg",
+            "https://imgur.com/Yu33342.jpg",
+            "https://imgur.com/NinLHTp.jpg",
+            "https://imgur.com/gzO6lIo.jpg",
+            "https://imgur.com/utxw1y7.jpg",
+            "https://imgur.com/2aQRaJO.jpg",
+            "https://imgur.com/YlxSZAB.jpg",
+            "https://imgur.com/g6OXNpf.jpg",
+            "https://imgur.com/n6n6QAb.jpg"
             ]
 
 
