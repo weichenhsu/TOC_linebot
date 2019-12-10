@@ -66,7 +66,7 @@ def send_templete_message(reply_token):
 def news(reply_token, url):
     line_bot_api = LineBotApi(channel_access_token)
 
-    res = requests.get("https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRGx1YlY4U0JYcG9MVlJYR2dKVVZ5Z0FQAQ?hl=zh-TW&gl=TW&ceid=TW%3Azh-Hant")
+    res = requests.get(url)
     #Google國際新聞的網址
     soup = BeautifulSoup(res.text,"html.parser")
     content = ""

@@ -82,7 +82,7 @@ class TocMachine(GraphMachine):
         print("I'm entering state3")
         reply_token = event.reply_token
         
-        news(reply_token, "test")
+        news(reply_token, "https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRGx1YlY4U0JYcG9MVlJYR2dKVVZ5Z0FQAQ?hl=zh-TW&gl=TW&ceid=TW:zh-Hant")
         #send_text_message(reply_token, text)
         self.go_back()
 
