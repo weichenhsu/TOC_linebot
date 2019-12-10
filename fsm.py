@@ -32,7 +32,7 @@ video_mp4 = ["https://i.imgur.com/Rq6m3PO.mp4",
 video_jpg = ["https://i.imgur.com/haMAxrE.jpg",
             "https://i.imgur.com/OuSXpfE.jpg",
             "https://i.imgur.com/WpEDtlZ.jpg",
-            "https://imgur.com/UtSbLyd,jpg",
+            "https://i.imgur.com/UtSbLyd.jpg",
             "https://imgur.com/DhvdkjA.jpg",
             "https://imgur.com/v3u0Zvv,jpg"
             ]
