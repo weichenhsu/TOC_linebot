@@ -6,7 +6,7 @@
 
 
 ## Finite State Machine
-![fsm](./img/show-fsm.png)
+![fsm](https://i.imgur.com/3VagzQo.png)
 
 ## Usage
 The initial state is set to `user`.
