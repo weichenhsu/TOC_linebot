@@ -94,7 +94,7 @@ def send_templete_message_news(reply_token):
                 MessageTemplateAction(
                     label='健康',
                     text='健康'
-                ),
+                )
             ]
         )
     )
