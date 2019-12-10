@@ -29,6 +29,7 @@ def send_image(reply_token, text):
 def movie(reply_token):
     print("movie")
     target_url = 'https://movies.yahoo.com.tw/'
+    requests.packages.urllib3.disable_warnings()
     #rs = requests.session()
     res = requests.get(target_url, verify=False)
     res.encoding = 'utf-8'
