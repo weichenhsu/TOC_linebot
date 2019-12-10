@@ -8,6 +8,7 @@ class TocMachine(GraphMachine):
         self.machine = GraphMachine(model=self, **machine_configs)
 
     def is_going_to_state1(self, event):
+        print("go to state1 ing")
         text = event.message.text
         '''if text.lower() == "go to state1":
             return True
