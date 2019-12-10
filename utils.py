@@ -61,6 +61,7 @@ def send_templete_message(reply_token):
         )
     )
     line_bot_api.reply_message(reply_token, message)
+    return "OK"
 
 
 def movie(reply_token):
@@ -73,7 +74,10 @@ def movie(reply_token):
     content = ""
     for s in sel:
         print(s["href"], s.text) 
-        content += s.text
+        content += '{}\n'.format(s.text)
+
+    line_bot_api.reply_message(reply_token,TextSendMessage(text=content))
+    return "OK"
 
 
     '''
@@ -91,14 +95,4 @@ def movie(reply_token):
         link =  data['href']
         content += '{}\n{}\n'.format(title, link)'''
 
-    line_bot_api.reply_message(reply_token,TextSendMessage(text=content))
-    return "OK"
-
-
-"""
-def send_image_url(id, img_url):
-    pass
-
-def send_button_message(id, text, buttons):
-    pass
-"""
+    
