@@ -68,7 +68,7 @@ def send_templete_message_news(reply_token):
         alt_text='Buttons template',
         template=ButtonsTemplate(
             thumbnail_image_url='https://i.imgur.com/rETMF3V.jpg',
-            title='Menu',
+            title='News',
             text='Please select',
             actions=[
                 MessageTemplateAction(
@@ -82,6 +82,10 @@ def send_templete_message_news(reply_token):
                 MessageTemplateAction(
                     label='科學與科技',
                     text='科學與科技'
+                ),
+                MessageTemplateAction(
+                    label='娛樂',
+                    text='娛樂'
                 )
             ]
         )
