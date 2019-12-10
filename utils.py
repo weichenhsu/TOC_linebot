@@ -55,7 +55,7 @@ def send_templete_message(reply_token):
                 ),
                 URITemplateAction(
                     label='More cat',
-                    uri='https://weichen136.imgur.com/all'
+                    uri='https://imgur.com/user/weichen136/posts'
                 )   
             ]
         )
