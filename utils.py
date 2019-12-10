@@ -82,7 +82,7 @@ def send_templete_message_news(reply_token):
                 MessageTemplateAction(
                     label='科學與科技',
                     text='科學與科技'
-                ),
+                )''',
                 MessageTemplateAction(
                     label='娛樂',
                     text='娛樂'
@@ -94,7 +94,7 @@ def send_templete_message_news(reply_token):
                 MessageTemplateAction(
                     label='健康',
                     text='健康'
-                )
+                )'''
             ]
         )
     )
