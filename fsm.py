@@ -139,7 +139,7 @@ class TocMachine(GraphMachine):
         i = random.randint(0, len(video_mp4) -1)
         #send_video(reply_token, video_mp4[i], video_jpg[i])
 
-        send_video(reply_token, video_mp4[0], video_jpg[0])
+        send_video(reply_token, video_mp4[1], video_jpg[1])
         #send_video(reply_token, "https://i.imgur.com/Rq6m3PO.mp4", "https://i.imgur.com/haMAxrE.jpg")
         self.go_back()
 
