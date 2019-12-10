@@ -40,7 +40,7 @@ machine = TocMachine(
             "dest": "state4",
             "conditions": "is_going_to_state4",
         },
-        {"trigger": "go_back", "source": ["state1", "state2", "state4"], "dest": "user"},
+        {"trigger": "go_back", "source": ["state1", "state2", "state3",  "state4"], "dest": "user"},
     ],
     initial="user",
     auto_transitions=False,
@@ -116,17 +116,10 @@ def webhook_handler():
         print(f"REQUEST BODY: \n{body}")
         #if machine.state == 'user':
         response = machine.advance(event)
-        '''if machine.state == 'state3':
-            send_text_message(event.reply_token, event)
-            response = machine.next(event)
-            send_text_message(event.reply_token, "state4")'''
+
         if response == False:
             message = machine.state + event.message.text
-            send_text_message(event.reply_token, )
-            '''message = TextSendMessage(text='Hello, world')
-            line_bot_api.reply_message(
-                event.reply_token, message
-            )'''
+            send_text_message(event.reply_token, "指令錯誤")
 
     return "OK"
 
