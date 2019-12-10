@@ -13,7 +13,7 @@ picture = ["https://imgur.com/JL1zwCv.jpg",
             "https://imgur.com/2aQRaJO.jpg",
             "https://imgur.com/YlxSZAB.jpg",
             "https://imgur.com/g6OXNpf.jpg",
-            "https://imgur.com/n6n6QAb.jpg".
+            "https://imgur.com/n6n6QAb.jpg",
             "https://i.imgur.com/thAjjOp.jpg",
             "https://imgur.com/k6RuQOn.jpg",
             "https://imgur.com/m8VPULl,jpg",
