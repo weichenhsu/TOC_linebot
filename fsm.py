@@ -1,7 +1,23 @@
 from transitions.extensions import GraphMachine
-
-#from utils import send_text_message, send_image
 from utils import *
+import random
+
+picture = ["https://imgur.com/JL1zwCv",
+            "https://imgur.com/8lTsvo1",
+            "https://imgur.com/ONdJRvL",
+            "https://imgur.com/haMAxrE",
+            "https://imgur.com/Yu33342",
+            "https://imgur.com/NinLHTp",
+            "https://imgur.com/gzO6lIo",
+            "https://imgur.com/utxw1y7",
+            "https://imgur.com/2aQRaJO",
+            "https://imgur.com/YlxSZAB",
+            "https://imgur.com/g6OXNpf",
+            "https://imgur.com/n6n6QAb"
+            ]
+
+
+
 
 class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
@@ -13,7 +29,6 @@ class TocMachine(GraphMachine):
             return True
         else:
             return False
-        #return text.lower() == "貓貓"
 
     def is_going_to_cat_picture(self, event):
         text = event.message.text
@@ -21,15 +36,13 @@ class TocMachine(GraphMachine):
             return True
         else:
             return False
-        #return text.lower() == "貓貓照片"
 
     def is_going_to_cat_video(self, event):
         text = event.message.text
         if text.lower() == "貓貓影片" or text.lower() == "貓咪影片" or text.lower() == "cat video" or text.lower() == "影片" or text.lower() == "video":
             return True
         else:
-            return False
-        #return text.lower() == "貓貓影片"    
+            return False  
 
     def is_going_to_news(self, event):
         text = event.message.text
@@ -37,7 +50,6 @@ class TocMachine(GraphMachine):
             return True
         else:
             return False
-        #return text.lower() == "新聞"
 
     def is_going_to_international(self, event):
         text = event.message.text
@@ -45,7 +57,6 @@ class TocMachine(GraphMachine):
             return True
         else:
             return False
-        #return text.lower() == "國際"
     
     def is_going_to_business(self, event):
         text = event.message.text
@@ -53,7 +64,6 @@ class TocMachine(GraphMachine):
             return True
         else:
             return False
-        #return text.lower() == "商業"
 
     def is_going_to_science(self, event):
         text = event.message.text
@@ -61,7 +71,6 @@ class TocMachine(GraphMachine):
             return True
         else:
             return False
-        #return text.lower() == "科學與科技"
 
     def is_going_to_entertainment(self, event):
         text = event.message.text
@@ -69,7 +78,6 @@ class TocMachine(GraphMachine):
             return True
         else:
             return False
-        #return text.lower() == "娛樂"
     
     def is_going_to_physical(self, event):
         text = event.message.text
@@ -77,7 +85,6 @@ class TocMachine(GraphMachine):
             return True
         else:
             return False
-        #return text.lower() == "體育"
 
     def is_going_to_health(self, event):
         text = event.message.text
@@ -85,8 +92,6 @@ class TocMachine(GraphMachine):
             return True
         else:
             return False
-        #return text.lower() == "健康"
-
 
 
 
@@ -100,7 +105,9 @@ class TocMachine(GraphMachine):
 
     def on_enter_cat_picture(self, event):
         reply_token = event.reply_token
-        send_image(reply_token, "https://i.imgur.com/NinLHTp.jpg")
+        i = random.randint(0, len(picture) -1)
+        send_image(reply_token, picture[i])
+        #send_image(reply_token, "https://i.imgur.com/NinLHTp.jpg")
         self.go_back()
 
     def on_exit_cat_picture(self):
