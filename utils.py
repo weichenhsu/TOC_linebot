@@ -33,7 +33,7 @@ def send_video(reply_token, text):
         original_content_url = text,
         preview_image_url = text
     )
-    line_bot_api.reply_message(event.reply_token, message)
+    line_bot_api.reply_message(reply_token, message)
     return "OK"
 
 
@@ -43,7 +43,7 @@ def movie(reply_token):
 
     r = requests.get("https://www.ptt.cc/bbs/MobileComm/index.html") #將網頁資料GET下來
     soup = BeautifulSoup(r.text,"html.parser") #將網頁資料以html.parser
-    sel = soup.select("div.title a") #取HTML標中的 <div class="title"></div> 中的<a>標籤存入sel
+    sel = soup.select("span.tem-C is-active") #取HTML標中的 <div class="title"></div> 中的<a>標籤存入sel
     content = ""
     for s in sel:
         print(s["href"], s.text) 
