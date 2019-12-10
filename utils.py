@@ -103,7 +103,7 @@ def news(reply_token, url):
     content = ""
     count = 0
     for title,url in zip(soup.select("h4"),soup.select("h4 > a[href]")):
-        if count < 5:
+        if count < 4:
         #Google有時會換字體大小 像是h3改成現在的h4
 
             a = url['href'].replace("./", "")
