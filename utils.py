@@ -76,7 +76,7 @@ def news(reply_token, url):
         if count < 10:
             #Google有時會換字體大小 像是h3改成現在的h4
             a = url['href'].replace("./", "")
-            content += "{}\n{}\n".format(title.text, a)
+            content += "{}\n'https://news.google.com/'{}\n".format(title.text, a)
         count += 1
     print(content)
     line_bot_api.reply_message(reply_token, TextSendMessage(text=content))
