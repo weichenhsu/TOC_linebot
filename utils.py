@@ -68,7 +68,7 @@ def movie(reply_token):
     line_bot_api = LineBotApi(channel_access_token)
     print("movie")
 
-    r = requests.get("https://www.ptt.cc/bbs/MobileComm/index.html") #將網頁資料GET下來
+    r = requests.get("https://www.cwb.gov.tw/V8/C/W/County/County.html?CID=67") #將網頁資料GET下來
     soup = BeautifulSoup(r.text,"html.parser") #將網頁資料以html.parser
     sel = soup.select("span.tem-C is-active") #取HTML標中的 <div class="title"></div> 中的<a>標籤存入sel
     content = ""
