@@ -17,10 +17,12 @@ class TocMachine(GraphMachine):
         return text.lower() == "go to state1"
 
     def is_going_to_state2(self, event):
+        print("go to state2 ing")
         text = event.message.text
         return text.lower() == "go to state2"
 
     def is_going_to_state3(self, event):
+        print("go to state3 ing")
         text = event.message.text
         return text.lower() == "go to state3"
 
